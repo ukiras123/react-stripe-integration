@@ -1,0 +1,73 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "img": "https://images.pexels.com/photos/16831785/pexels-photo-16831785/free-photo-of-back-view-of-a-young-man-wearing-a-graphic-t-shirt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [
+        "https://images.pexels.com/photos/16831785/pexels-photo-16831785/free-photo-of-back-view-of-a-young-man-wearing-a-graphic-t-shirt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/9558233/pexels-photo-9558233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
+      "title": "Basketball T-Shirt Black",
+      "oldPrice": 18,
+      "price": 12,
+      "description": "Elevate your style with our classic white t-shirt, a timeless wardrobe essential designed for comfort and versatility, perfect for any occasion"
+    },
+    {
+      "id": 2,
+      "img": "https://images.pexels.com/photos/16048094/pexels-photo-16048094/free-photo-of-young-woman-in-casual-clothes-posing-in-studio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [
+        "https://images.pexels.com/photos/16048094/pexels-photo-16048094/free-photo-of-young-woman-in-casual-clothes-posing-in-studio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/3770254/pexels-photo-3770254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ],
+      "title": "Printed Black Top",
+      "oldPrice": 20,
+      "price": 16,
+      "description": "Discover ultimate comfort and effortless style in our iconic white t-shirt, a must-have staple that complements your look from dawn to dusk."
+    },
+    {
+      "id": 3,
+      "img": "https://images.pexels.com/photos/16048177/pexels-photo-16048177/free-photo-of-young-woman-in-casual-clothes-posing-in-studio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [],
+      "title": "Blue Yash G Top",
+      "oldPrice": 35,
+      "price": 25,
+      "description": "Unleash your inner fashionista with our pristine white tee, a fusion of comfort and elegance that takes you from casual outings to chic gatherings"
+    },
+    {
+      "id": 4,
+      "img": "https://images.pexels.com/photos/6633712/pexels-photo-6633712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [],
+      "title": "Colorful Anime T-Shirt",
+      "oldPrice": 20,
+      "price": 15,
+      "description": "Experience unmatched comfort and a touch of sophistication with our white t-shirt, your ultimate companion for creating both laid-back and polished ensembles."
+    },
+    {
+      "id": 5,
+      "img": "https://images.pexels.com/photos/17555333/pexels-photo-17555333/free-photo-of-young-man-in-a-jacket-with-graphic-on-the-back-standing-in-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [],
+      "title": "Urban Jacket",
+      "oldPrice": 50,
+      "price": 33,
+      "description": "Indulge in the perfect blend of comfort and fashion with our timeless white t-shirt, a versatile piece that embraces your uniqueness with every wear"
+    },
+    {
+      "id": 6,
+      "img": "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [],
+      "title": "Bright Yellow Hoodie",
+      "oldPrice": 99,
+      "price": 45,
+      "description": "Crafted for comfort seekers and trendsetters alike, our classic white tee epitomizes effortless style, making it an essential addition to your wardrobe."
+    },
+    {
+      "id": 7,
+      "img": "https://images.pexels.com/photos/47037/man-male-boy-the-young-man-47037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "images": [],
+      "title": "Black and Grey Hoodie",
+      "oldPrice": 100,
+      "price": 69,
+      "description": "Elevate your fashion game effortlessly with our white t-shirt, designed to infuse comfort into your everyday attire while exuding an air of understated elegance."
+    }
+  ]
+}
