@@ -1,6 +1,13 @@
 .navbar {
-    background-color: #f4a261;
+    -webkit-box-shadow: -3px 2px 18px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -3px 2px 18px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: -3px 2px 18px -6px rgba(0, 0, 0, 0.75);
+    background-color: #a8dadc;
     padding: 1rem 0rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    // z-index: 3;
     .container {
         margin: auto;
         width: 80%;
@@ -16,6 +23,13 @@
         // color: #1d3557;
         a {
             text-transform: none;
+        }
+    }
+    .center {
+        h3 {
+            font-size: 1.1rem;
+            letter-spacing: 0.13rem;
+            font-weight: 100;
         }
     }
     .right {

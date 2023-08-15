@@ -1,83 +1,46 @@
 import React from "react";
 import { MdOutlineDelete } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { removeItem, resetCart } from "../../redux/cartReducer";
 import "./Cart.scss";
 function Cart() {
-  const data = [
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/16831785/pexels-photo-16831785/free-photo-of-back-view-of-a-young-man-wearing-a-graphic-t-shirt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      title: "Basketball T-Shirt Black",
-      oldPrice: 18,
-      price: 12,
-      description:
-        "Elevate your style with our classic white t-shirt, a timeless wardrobe essential designed for comfort and versatility, perfect for any occasion",
-    },
-    {
-      id: 2,
-      img: "https://images.pexels.com/photos/16048094/pexels-photo-16048094/free-photo-of-young-woman-in-casual-clothes-posing-in-studio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      title: "Printed Black Top",
-      oldPrice: 20,
-      price: 16,
-      description:
-        "Discover ultimate comfort and effortless style in our iconic white t-shirt, a must-have staple that complements your look from dawn to dusk.",
-    },
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/16831785/pexels-photo-16831785/free-photo-of-back-view-of-a-young-man-wearing-a-graphic-t-shirt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      title: "Basketball T-Shirt Black",
-      oldPrice: 18,
-      price: 12,
-      description:
-        "Elevate your style with our classic white t-shirt, a timeless wardrobe essential designed for comfort and versatility, perfect for any occasion",
-    },
-    {
-      id: 2,
-      img: "https://images.pexels.com/photos/16048094/pexels-photo-16048094/free-photo-of-young-woman-in-casual-clothes-posing-in-studio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      title: "Printed Black Top",
-      oldPrice: 20,
-      price: 16,
-      description:
-        "Discover ultimate comfort and effortless style in our iconic white t-shirt, a must-have staple that complements your look from dawn to dusk.",
-    },
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/16831785/pexels-photo-16831785/free-photo-of-back-view-of-a-young-man-wearing-a-graphic-t-shirt.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      title: "Basketball T-Shirt Black",
-      oldPrice: 18,
-      price: 12,
-      description:
-        "Elevate your style with our classic white t-shirt, a timeless wardrobe essential designed for comfort and versatility, perfect for any occasion",
-    },
-    {
-      id: 2,
-      img: "https://images.pexels.com/photos/16048094/pexels-photo-16048094/free-photo-of-young-woman-in-casual-clothes-posing-in-studio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      title: "Printed Black Top",
-      oldPrice: 20,
-      price: 16,
-      description:
-        "Discover ultimate comfort and effortless style in our iconic white t-shirt, a must-have staple that complements your look from dawn to dusk.",
-    },
-  ];
+  const products = useSelector((state) => state.cart.products);
+  const dispatch = useDispatch();
+
+  const total = () => {
+    let total = 0;
+    products.forEach((item) => {
+      total += item.quantity * item.price;
+    });
+    return total.toFixed(2);
+  };
   return (
     <div className="main-cart">
       <h1>Products in your cart</h1>
-      {data.map((item) => (
+      {products.map((item) => (
         <div key={item.id} className="item">
           <img src={item.img} alt="" />
           <div className="details">
             <h1>{item.title}</h1>
             <p>{item.description.substring(0, 100)}</p>
-            <div className="price">1 x ${item.price}</div>
+            <div className="price">
+              {item.quantity} x ${item.price}
+            </div>
           </div>
-          <MdOutlineDelete className="delete" />
+          <MdOutlineDelete
+            className="delete"
+            onClick={() => dispatch(removeItem(item.id))}
+          />
         </div>
       ))}
       <div className="total">
         <span>Subtotal</span>
-        <span>$123</span>
+        <span>${total()}</span>
       </div>
       <button>Proceed to Checkout</button>
-      <span className="reset">Reset Cart</span>
+      <span className="reset" onClick={() => dispatch(resetCart())}>
+        Reset Cart
+      </span>
     </div>
   );
 }

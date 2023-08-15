@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
-import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Navigate, useParams } from "react-router-dom";
+
 import data from "../../data/products.json";
+import { addToCart } from "../../redux/cartReducer";
 import "./Product.scss";
 
 const Product = () => {
-  // let navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const id = useParams().id;
   const [selectedImg, setSelectedImg] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const product = data.products.find((p) => p.id == id);
 
-  // if (!product) {
-  //   return navigate("/");
-  // }
+  if (!product) {
+    return <Navigate to={`/`} />;
+  }
   console.log(product);
   const hasImages = product.images.length > 0;
   return (
@@ -42,14 +44,9 @@ const Product = () => {
         </div>
       </div>
       <div className="right">
-        <h1>Title</h1>
-        <span className="price">$199</span>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque,
-          accusantium. Esse in ex unde quam veniam doloribus, at aliquid vitae
-          ullam obcaecati ipsam illum blanditiis molestias sed nemo! Ut,
-          ducimus.
-        </p>
+        <h1>{product?.title}</h1>
+        <span className="price">${product?.price}</span>
+        <p>{product?.description}</p>
         <div className="quantity">
           <button
             onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
@@ -59,7 +56,17 @@ const Product = () => {
           {quantity}
           <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
         </div>
-        <button className="add">
+        <button
+          className="add"
+          onClick={() =>
+            dispatch(
+              addToCart({
+                ...product,
+                quantity,
+              })
+            )
+          }
+        >
           <MdOutlineAddShoppingCart />
           Add to Cart
         </button>
