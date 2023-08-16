@@ -4,7 +4,7 @@
     top: 4.3rem;
     z-index: 999;
     width: 400px;
-    height: 70vh;
+    max-height: 70vh;
     background-color: white;
     padding: 20px;
     box-shadow: 6px 16px 38px -14px rgba(0, 0, 0, 0.67);
@@ -69,11 +69,16 @@
         gap: 10px;
         cursor: pointer;
     }
+    button[disabled] {
+        background-color: #e0bab0;
+        cursor: default;
+    }
     .reset {
+        display: inline-block;
         color: red;
         cursor: pointer;
         font-size: 15px;
-        margin-top: 5px;
+        margin-top: 10px;
     }
     .loading-icon {
         font-size: 1.3rem;

@@ -62,7 +62,9 @@ function Cart() {
         <span>${total()}</span>
       </div>
       {isLoading && <FiCommand className="loading-icon" />}
-      <button onClick={handlePayment}>Proceed to Checkout</button>
+      <button disabled={products.length === 0} onClick={handlePayment}>
+        Proceed to Checkout
+      </button>
       <span className="reset" onClick={() => dispatch(resetCart())}>
         Reset Cart
       </span>
