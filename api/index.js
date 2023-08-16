@@ -7,7 +7,7 @@ require("dotenv").config();
 const { STRIPE_SECRET_KEY, CLIENT_URL } = process.env;
 // @ts-ignore
 const stripe = require("stripe")(STRIPE_SECRET_KEY);
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cors());
@@ -48,5 +48,5 @@ app.post("/create-checkout-session", async (req, res) => {
   }
 });
 app.listen(PORT, () =>
-  console.log(`Server is live in http://localhostL=:${PORT}`)
+  console.log(`Server is live in http://localhost=:${PORT}`)
 );
