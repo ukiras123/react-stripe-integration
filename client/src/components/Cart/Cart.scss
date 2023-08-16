@@ -1,5 +1,5 @@
 .main-cart {
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 4.3rem;
     z-index: 999;
@@ -92,5 +92,12 @@
         100% {
             transform: rotate(720deg);
         }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .main-cart {
+        right: 0;
+        width: 100vw;
     }
 }
