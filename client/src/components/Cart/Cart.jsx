@@ -26,7 +26,7 @@ function Cart() {
     try {
       const stripe = await stripePromise;
       const { data } = await axios.post(
-        "http://localhost:8080/create-checkout-session",
+        `${import.meta.env.API_URL}/create-checkout-session`,
         products
       );
       const result = await stripe?.redirectToCheckout({
