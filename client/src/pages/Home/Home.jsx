@@ -26,7 +26,7 @@ const Home = () => {
       // @ts-ignore
       setIsSuccess(false);
     }
-  }, [isSuccessAfterPayment]);
+  }, [isSuccessAfterPayment, dispatch]);
 
   useEffect(() => {
     if (isSuccess === null) return;

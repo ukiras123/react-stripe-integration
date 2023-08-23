@@ -1,11 +1,9 @@
-import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import React, { useState } from "react";
 import { FiCommand } from "react-icons/fi";
 import { MdOutlineDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { removeItem, resetCart } from "../../redux/cartReducer";
-
 import "./Cart.scss";
 function Cart() {
   const products = useSelector((state) => state.cart.products);
@@ -20,20 +18,15 @@ function Cart() {
     return total.toFixed(2);
   };
 
-  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PK || "");
   const handlePayment = async () => {
     setIsLoading(true);
     try {
-      const stripe = await stripePromise;
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_URL}/create-checkout-session`,
         products
       );
-      const result = await stripe?.redirectToCheckout({
-        sessionId: data.id,
-      });
-      dispatch(resetCart());
-      console.log("Redirect url", result);
+      setIsLoading(true);
+      window.location.href = data.url;
     } catch (e) {
       console.log("Error", e);
     }
